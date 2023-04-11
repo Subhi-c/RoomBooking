@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+   <!-- jQuery library -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css">
+
+    <link rel="stylesheet" href="page2.css">
+    <title>Document</title>
+    <script>
+      $( function() {
+$( "#datepicker" ).datepicker();
+} );
+
+
+$( function() { 
+$( "#datepicker1" ).datepicker();
+} );
+
+
+  
+$( function() {
+  $( "#timepicker" ).timepicker();
+  } );
+
+
+
+
+$( function() {
+  
+  $( "#timepicker1" ).timepicker();
+  } );
+
+  
+         
+  </script>
+</head>
+<body ng-app="MyApp"  ng-controller="MyCtrl" >
+    <div class="outer">
+        <div class="inner">
+            <div class="small">
+                <form name="myForm">
+                    <div class="header">
+                        <h3><b>Additional Requirements</b></h3>
+                      </div>
+                      <div class="mainalign">
+                    <div class="align" >
+                        <div class="radio"style="margin-right:60px">
+                        <lable class="form-label">Room type :</lable>
+                        <span class="error" >*</span><br>
+                         
+                          <input type="radio" id="ac" name="roomtype" value="ac">
+                                 <lable>AC</lable>
+                                 
+                                 <input type="radio" id="nonac" name="roomtype" value="nonac" style="margin-left: 35px;">
+                                 <lable >NON-AC</lable>
+                       
+                        
+                     </div> 
+                     <div class="text">
+                      <label>Check-in Date:</label>
+                      <span class="error" >*</span><br>
+                      <input placeholder="Select check-in Date" type="date" id="date"  name="checkindate" ng-model="userSelect1" required class="ng-untouched change"><br>
+                      <span class="error" ng-show="myForm.checkindate.$touched && myForm.checkindate.$invalid">Check-in date must be chosen</span>
+                      
+                  </div>
+                     
+                     <div class="text"  >
+                        
+                      <lable> Expecte Check-out Date:</lable>
+                      <span class="error" >*</span><br>
+                      <input placeholder="Select expecte check-out Date" type="date"  id="date1" name="checkoutdate" ng-model="userSelect2" required class="ng-untouched" class="change" >
+                      
+                   <br><span class="error" ng-show="myForm.checkoutdate.$touched && myForm.checkoutdate.$invalid">Check-out Time must be choosen</span>
+                      
+                   </div>
+                     
+                    </div>
+                    <div class="align1" >
+                        <div  class="text" >
+                        
+                            <lable>Roomsize :</lable>
+                            <span class="error" >*</span><br>
+                            <select name="romsize" ng-model="userSelect" required >
+                             <option value="">Choose your room size</option>
+                                <option ng-repeat="option in roomsize" value="{{option}}">{{option}}</option>
+                         </select><br>
+                         <span class="error" ng-show="myForm.roomsize.$touched && myForm.roomsize.$invalid">Room size must be choosen</span>
+                            
+                         </div>
+                     <div  class="text" >
+                        
+                        <lable>Check-in Time :</lable>
+                        <span class="error" >*</span><br>
+                        <input placeholder="Select Check-in Time" type="text"  name="checkintime" ng-model="userSelect3" id="timepicker" required class="ng-untouched" class="change" >
+                     <br><span class="error" ng-show="myForm.checkintime.$touched && myForm.checkintime.$invalid">Check-in Time must be choosen</span>
+                        
+                     </div>
+                     <div class="text"  >
+                        
+                        <lable> Expected Check-out Time :</lable>
+                        <span class="error" >*</span><br>
+                        <input placeholder="Select expected check-out Date"   id="timepicker1" name="checkouttime" ng-model="userSelect4" required class="ng-untouched" class="change" >
+                     <br><span class="error" ng-show="myForm.checkouttime.$touched && myForm.checkouttime.$invalid">Check-out Time must be choosen</span>
+                        
+                     </div>
+                     
+                    </div>
+                    
+                </div>
+                <div class="myservice">
+                <div class="service">
+                <h3 style="margin: 0px;"><b>Services needed</b></h4>
+          <div class="service1" >
+        
+            <input type="checkbox" ng-model="checked" ng-init="checked=false" id="myCheck" >
+            <label style="padding-left: 10px;">Catering
+          </label>
+          <input type="checkbox" ng-model="checked1" ng-init="checked=false" id="myCheck" style="margin-left: 30px;" >
+          <label style="padding-left: 10px;">Laundry Service
+        </label>
+      
+    </div>
+            
+          </div>
+        </div>
+          <div class="hide" >
+            <div  class="hide1" style="width:300px" id="text"  style="display:none" ng-if="checked">
+              <label for="validationCustom01"  style=" margin-bottom: none;margin-top: 3px;">Catering Type</label>
+              <select name="catering" ng-model="userSelect5"  >
+                <option value="">Choose Catering Type</option>
+                   <option ng-repeat="option in catering" value="{{option}}">{{option}}</option>
+                   
+            </select>
+            <br><span class="error" ng-show="myForm.catering.$touched && myForm.catering.$invalid">Catering type must be choosen</span>
+            </div>
+           
+            
+            <div  style="width:300px" id="text"  style="display:none" ng-if="checked1">
+              <label for="validationCustom01" class="form-label" style=" margin-bottom: none;margin-top: 3px;">Laundry Type</label>
+              <select name="service" ng-model="userSelect6"  >
+                <option value="">Choose Laundry Type</option>
+                <option ng-repeat="option in laundry" value="{{option}}">{{option}}</option>  
+                
+            </select><br>
+            <span class="error" ng-show="myForm.service.$touched && myForm.service.$invalid">service type must be choosen</span>
+            
+            </div>
+           
+            
+          </div>
+          <div class="last">
+            <div class="button col-12" >
+              <div class="button1" >
+                  <button type="submit"  value="next" style="width: 100px;" ng-click="ShowHide()"    >NEXT</button>
+              </div>
+              <div class="button2">
+                 
+                      <button  type="button"  value="next">VIEW BOOKING</button>
+                  </div>
+          </div>
+          </div>
+          
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+     
+
+    <div class="popup" ng-show="IsVisible" >
+      <div class="popupcontainer">
+        <form name="SubForm" id="formid">
+       <h4 >CHARGES</h4>
+       <div class="innerpop">
+           <div class="showpop">
+             <div>
+             <label class="field" >Room charges</label>
+           </div>
+           <div>
+             <label class="field">Catering charges</label>
+           </div>
+           <div>
+             <label class="field">Laundry charges</label>
+           </div>
+           <div>
+             <label class="field">Tax Amount(18%)</label>
+           </div>
+           <div>
+             <label class="field">Total cost</label>
+           </div>
+           </div>
+           <div class="showpop1">
+             <div>
+             <input type="number" id="roomcharge"  ng-model="roomcharge" required name="myDecimal"  ng-model="myDecimal | number : 2"  step="0.01" ><br>
+             
+           </div>
+           <div>
+             <input type="number" id="roomcharge" ng-model="cateringcharge" required name="myDecimal1"  ng-model="myDecimal1 | number : 2"  step="0.01"><br>
+           </div>
+           <div>
+             <input type="number" id="roomcharge" ng-model="laundrycharge" required name="myDecimal2"  ng-model="myDecimal2 | number : 2"  step="0.01">
+             
+           </div>
+           <div>
+             <input type="number" id="roomcharge" ng-model="taxamount" required name="myDecimal3"  ng-model="myDecimal3 | number : 2"  step="0.01">
+            
+           </div>
+           <div>
+             <input type="number" id="roomcharge" ng-model="totalcost" required name="myDecimal4"  ng-model="myDecimal4 | number : 2"  step="0.01">
+            
+           </div>
+           </div>
+           
+       </div>
+       <div class="button col-12" >
+         <div class="button1" >
+             <button type="submit"  value="next" style="width: 100px;"  ng-click="Submit()"  >SUBMIT</button>
+         </div>
+         <div class="button2">
+            
+                 <button  type="button"   value="next" ng-click="HidePopup()">CANCEL</button>
+             </div>
+     </div>
+      </div> 
+   </div>
+</form>
+</div>
+  </div>
+  
+    <script src="script.js"></script>
+</body>
+</html>

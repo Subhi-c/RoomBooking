@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body ng-app="MyApp" ng-controller="MyCtrl" >
+    <div class="outer">
+        <div class="inner">
+            <div class="small">
+                <form name="myForm" id="FirstForm" >
+                    <div class="header">
+                        <h3>Room booking details</h3>
+                    </div>
+                    <div class="first">
+                        <div>
+                           <lable>Name :</lable>
+                           <span class="error" >*</span><br>
+                           <input type="text" id="input-text" name="username" class="username"  ng-model="username" placeholder="Enter the name"   pattern="[a-zA-Z'\s]{1,15}"  >
+                           
+                           <br>
+                           <span class="error" ng-show="myForm.username.$error.pattern"> Enter valid name</span>
+                         
+                           
+                          </div>
+                        <div>
+                           <lable>Age :</lable>
+                           <span class="error" >*</span> <br>
+                           <input type="text" name="age" id="input-text" placeholder="Enter your Age " ng-model="age"  pattern="[0-9]{1,2}" ><br>
+                           
+                           <span class="error" ng-show="myForm.age.$error.pattern"> Age must be a number and less than 100</span>
+                        </div>
+                    </div>
+                    <div class="first1"   >
+                        <div >
+                           <lable>Gender :</lable><br>
+                           <select name="gender" id="input-text" ng-model="userSelect" class="ng-untouched"   >
+                            <option value="">Choose your gender</option>
+                               <option ng-repeat="option in availableoptions" value="{{option}}">{{option}}</option>
+                        </select><br>
+                        <span class="error" ng-show="myForm.gender.$touched && myForm.gender.$invalid">Gender must be choosen</span>
+                           
+                        </div>
+                        <div>
+                           <lable>Purpose :</lable> <br>
+                           <input type="text" id="input-text" name="purpose" placeholder="Enter the purpose " ng-model="purpose" ><br>
+                          
+                        </div>
+                    </div>
+                    <div class="first1">
+                        <div>
+                           <lable>Email :</lable><br>
+                           <input type="email" id="input-text" name="email" placeholder="Enter the e-mail address" ng-model="email" ><br>
+                           <span class="error" ng-show="myForm.email.$invalid">Enter valid Email</span>
+                          
+                        </div>
+                        <div>
+                           <lable>Phone number :</lable>
+                           <span class="error" >*</span> <br>
+                           <input type="text" id="input-text" name="mobilenum" placeholder="Enter the phonenumber " ng-model="mobilenum" pattern="[5-9][0-9]{9}" ><br>
+                           
+                           <span class="error" ng-show="myForm.mobilenum.$error.pattern">Enter valid Mobilenumber</span>
+                        </div>
+                    </div>
+                    <div class="first1"  >
+                        <div>
+                           <lable>ID type :</lable>
+                           <span class="error" >*</span><br>
+                           <select id="input-text" name="drop" ng-model="drop">
+                            <option value="">Choose your govt ID type</option>
+                               <option ng-repeat="option in idnames" value="{{option}}">{{option}}</option>
+                        </select><br>
+                        <span class="error" ng-show="myForm.drop.$touched && myForm.drop.$invalid">ID must be choosen</span>
+                        
+                        </div>
+                        <div>
+                            <lable>ID number :</lable>
+                            <span class="error" >*</span> <br>
+                            <input type="text" id="input-text" name="idennum" placeholder="Enter the ID number " ng-model="idennum" pattern="[0-9]{10}" ><br>
+                            
+                            <span class="error" ng-show="myForm.idennum.$error.pattern">Enter valid ID</span>
+                         </div>
+                        
+                        
+                    </div>
+                    <div class="button" >
+                        <div class="button1" ng-controller="MyCtrl">
+                            <button type="submit" id="next" value="next" style="width: 100px;" ng-click="clicked()" >NEXT</button>
+                        </div>
+                        <div class="button2">
+                           
+                                <button  type="button" >VIEW BOOKING</button>
+                            </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+   
+    <script src="script1.js"></script>
+</body>
+</html>

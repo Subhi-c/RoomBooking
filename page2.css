@@ -1,0 +1,236 @@
+body{
+    height:100vh;
+    width:100vw;
+}
+.outer{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner{
+    width: 900px;
+    height: 650px;
+    background-color: #D6D190;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.small{
+    width:700px;
+    height:500px;
+    background-color: white;
+    border-radius: 20px;
+}
+.header{
+    Font-family: Quando;
+Font-style: Regular;
+Font-size: 23px;
+text-align: center;
+color:#741414;
+}
+form{
+    height: 100%;
+}
+.first{
+    display: flex;
+    justify-content: space-around;
+    Font-family: Quando;
+Font-style: Regular;
+Font-size: 14px;
+}
+.mainalign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}
+.align{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   margin-right: 60px;
+   height:220px ;
+}
+.align1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   margin-left: 60px;
+height: 220px;
+}
+
+select{
+    width: 230px;
+    height: 30px;
+    border: 2px solid rgba(98,98,98,0.54);
+    background-color:#D9D9D9 ;
+    border-radius: 8px;
+    box-shadow: 0px 2px #D5D5D5;
+    margin-top:3px;
+    outline: 0;
+    padding-left: 10px;
+    Font-family: Quando;
+    Font-size: 14px;
+}
+#date,#date1,#timepicker1,#timepicker{
+    width: 220px;
+    height: 25px;
+    border: 2px solid rgba(98,98,98,0.54);
+    background-color:#D9D9D9 ;
+    border-radius: 8px;
+    box-shadow: 0px 2px #D5D5D5;
+    outline:0;
+    margin-top:3px;
+    padding-left: 10px;
+    Font-family: Quando;
+    Font-size: 14px;
+}
+
+.error{
+    color:red;
+}
+.service{
+    margin-left: 55px;
+   
+}
+.hide{
+    display: flex;
+  align-items: center;
+ 
+  margin-top: 10px;
+  margin-left: 55px;
+}
+button{
+   
+    width: 150px;
+    height: 30px;
+    border-radius: 20px!important;
+    border: none;
+    border: 2px solid rgba(98,98,98,0.54);
+   background-color: #626262;
+   color: #ffffff;
+}
+.button{
+    display: flex;
+    justify-content: space-evenly;
+   
+    
+}
+.popup{
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popupcontainer{
+    background-color: white;
+    width:380px;
+    height: 340px;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid #626262;
+    
+}
+.innerpop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.showpop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 185px;
+}
+.showpop1{
+    display: flex;
+    flex-direction: column;
+   padding-bottom: 30px;
+    height: 195px;
+}
+
+.showpop1 input{
+   margin-top: 10px;
+    border: 2px solid rgba(98,98,98,0.54);
+    border-radius: 8px;
+    background-color: #D9D9D9;
+    margin-left: 40px;
+    height: 18px;
+    margin-bottom: 10px;
+}
+.field{
+    Font-family: Quando;
+Font-style: Regular;
+Font-size: 15px;
+
+}
+
+
+h4{
+    text-align:center;
+    margin: 0px;
+    padding-top: 20px;   
+    Font-family: Quando;
+    Font-style: Regular;
+    Font-size: 20px;
+    text-align: center;
+    color:#741414;
+}
+.last{
+    margin-top: 30px;
+}
+.ui-datepicker,.ui-datepicker1{
+    font-size: 13px;
+    
+  }
+ 
+  @media (max-width:700px){
+    
+    .inner{
+        width:400px;
+        height: 800px;
+       
+    }
+    .small{
+        width:300px;
+        height: 750px;
+    }
+    .mainalign{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    .align{
+        margin-right: 0px;
+    }
+    
+    .align1,.service{
+        margin-left: 0px;
+       
+    }
+    .hide{
+        margin-left: 0px;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 40px;
+    }
+    
+    .myservice{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+   
+    
+    }
